@@ -1,1 +1,13 @@
 # HW-1-UML-diagram
+## การวางโครงสร้างไฟล์
+- src
+    - main
+        - java
+            - org.example
+                - Board.java
+                - Die.java
+                - Main.java
+                - MGame.java
+                - Piece.java
+                - Player.java
+                - Square.java
