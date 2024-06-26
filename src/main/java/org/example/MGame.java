@@ -41,27 +41,30 @@ public class MGame {
             player.setDies(dies);
             player.setPiece(piece);
         }
+        System.out.println("=====================================================================================");
+        System.out.println("Game Start!");
 
         for (; roundCount < round; roundCount++) {
+            System.out.println("=====================================================================================");
+            System.out.println("*****************************");
+            System.out.println("Round " + (roundCount+1) + "!");
+            System.out.println("*****************************");
             playRound();
         }
+        System.out.println("=====================================================================================");
     }
 
     private void playRound() {
-        System.out.println("=====================================================================================");
-        System.out.println("Game Start!");
-        System.out.println("=====================================================================================");
         for (Player player : players) {
-            System.out.println(player.getName()+"'s turn.");
+            System.out.println("#" + player.getName()+"'s turn.");
             int fvTot = player.takeTurn();
             Square oldLoc = player.getPiece().getLocation();
             Square newLoc = player.getBoard().getSquare(oldLoc, fvTot);
             player.getPiece().setLocation(newLoc);
-            System.out.println("Location: " + oldLoc.getName() + ".");
-            System.out.println("Rolling...");
-            System.out.println("Advance " + fvTot + " moves!.");
-            System.out.println("Location: " + newLoc.getName() + ".");
-            System.out.println("=====================================================================================");
+            System.out.println("    Location: " + oldLoc.getName() + ".");
+            System.out.println("    Rolling...");
+            System.out.println("    Advance " + fvTot + " moves!.");
+            System.out.println("    Location: " + newLoc.getName() + ".");
         }
     }
 }
